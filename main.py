@@ -25,7 +25,7 @@ def main():
         if choice == 1:
             gunur_logo()
         elif choice == 2:
-            fib()2
+            fib()
         elif choice == 9:
             print("Exiting")
             loop = 0
