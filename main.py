@@ -1,25 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def gunur_logo():
+    with open('gunur-ascii.txt') as f:
+        print(''.join([line for line in f]))
+    f.close()
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('GitHub')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    gunur_logo()
 
 
 def main():
     print("Welcome to gunur.")
     loop = 1
-    choice = 0
     while loop == 1:
         while True:
             try:  # Ensure an integer is returned
@@ -29,7 +20,7 @@ def main():
                 print("Invalid input. Try again...")
 
         if choice == 1:
-            print(choice)
+            gunur_logo()
         elif choice == 2:
             print(choice)
         elif choice == 9:
@@ -40,7 +31,7 @@ def main():
 
 
 def show_menu():
-    print("1.) Item 1")
+    print("1.) gunur logo")
     print("2.) Item 2")
     print("9.) Exit")
     var = input("Option: ")
