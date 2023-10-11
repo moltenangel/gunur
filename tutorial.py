@@ -1,6 +1,9 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 
+import math
+
+
 def lesson1():  # Getting Started
     greeting = 'Hello World!'
     print(greeting)
@@ -137,8 +140,45 @@ def lesson4():  # Data Types
     print("")
 
     # String Index Values
-    print(first[1])
-    print(first[-1])
+    print(first[1])  # a
+    print(first[-1])  # w  (last letter)
+    print(first[1:-1])  # atthe  (last letter **is not** included in the range)
+    print(first[1:])  # atthew  (range from the nth to the last)
+
+    # Some mthods return boolean data
+    print(first.startswith("M"))  # True
+    print(first.endswith("e"))  # False
+
+    # Boolean data type
+    myvalue = False  # (True or False must be written in Proper Case)
+    x = bool(False)
+    print(type(x))
+    print(isinstance(myvalue, bool))  # True
+
+    # Numeric data types
+
+    # Integer type
+    price = 100
+    best_price = int(100)
+    print(type(price))
+    print(isinstance(best_price, int))  # True
+
+    # Float type
+    gpa = 3.28
+    y = float(1.14)
+    print(type(gpa))
+
+    # Complex type
+    comp_value = 5+3j
+    print(type(comp_value))  # complex
+    print(comp_value.real)  # 5.0
+    print(comp_value.imag)  # 3.0
+
+    # Built-in functions for numbers
+    print(abs(gpa))  # Absolute Value = 3.8
+    print(abs(gpa * -1))  # Absolute Value = 3.8
+    print(round(gpa))  # Round to the nearest integer = 3
+    print(round(gpa, 1))  # Round to the nearest n decimal = 3.3
 
     return
 
