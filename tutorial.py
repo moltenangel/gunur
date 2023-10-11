@@ -280,16 +280,18 @@ def lesson6():  # Lists & Tuples
     print(len(data))  # 3
 
     # Adding data to a list
-    # users.append('Elsa')  # Adds Else to the end of the list
+    users.append('Elsa')  # Adds Else to the end of the list
     print(users)  # ['Dave', 'John', 'Sara', 'Elsa']
     users += ['Jason']  # Adds Jason to the end of the list
     print(users)  # ['Dave', 'John', 'Sara', 'Elsa', 'Jason']
     # users += 'Jason'  # (incorrectly adds each letter to the list)
+
     # Extend adds items to the end of the list
     users.extend(['Robert', 'Jimmy'])  # Adds Robert and Jimmy to the end of the list
     print(users)  # ['Dave', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy']
-    users.extend(data)  # Adds the data list to the end of the list
-    print(users)  # ['Dave', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy','Dave', 42, True]
+    # users.extend(data)  # Adds the data list to the end of the list
+    # print(users)  # ['Dave', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy','Dave', 42, True]
+
     # Insert adds items to the start of the list
     users.insert(0,'Bob')  # Inserts Bob to the beginning of the list
     print(users)  # ['Bob', 'Dave', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy']
@@ -301,12 +303,42 @@ def lesson6():  # Lists & Tuples
     print(users)  # ['Bob', 'Robert', 'JPJ', 'Alex', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy']
 
     # Removing data from a list
-    users.remove('Bob')  # Remove Bob from the list
+    users.remove('Bob')  # Remove 'Bob' from the list
     print(users)  # ['Robert', 'JPJ', 'Alex', 'John', 'Sara', 'Elsa', 'Jason', 'Robert', 'Jimmy']
 
     print(users.pop())  # Removes the last index of the list
     print(users)  # ['Robert', 'JPJ', 'Alex', 'John', 'Sara', 'Elsa', 'Jason', 'Robert']
 
+    del users[0]  # Deletes 'Robert'
+    print(users)  # ['JPJ', 'Alex', 'John', 'Sara', 'Elsa', 'Jason', 'Robert']
+
+    # del data  # Completely deletes the list from memory and will throw an error if accessed
+    data.clear()  # removes all entries from the list, but will not throw an error
+    print(data)  # []
+
+    # Sorting lists: (This operation is case sensitive)
+    # users.sort()  # Throws an error because there is an integer in the list full of strings
+    print(users)  # ['JPJ', 'Sara', 'Elsa', 'Jason', 'Robert']
+
+    # users[1:2] = 'dave'  # Erroneously inserts 'd','a','v','e' in the second index position (Use brackets)
+    users[1:2] = ['dave']  # Replaces 'Sara' with 'dave' in the second index position (lowercase)
+    print(users)  # ['JPJ', 'dave', 'Elsa', 'Jason', 'Robert']
+    users.sort()  # Sorts list (Capital letters come before lowercase)!!!
+    print(users)  # ['Elsa', 'JPJ', 'Jason', 'Robert', 'dave']
+
+    users.sort(key=str.lower)  # Sorts list (regardless of case)
+    print(users)  # ['dave', 'Elsa', 'Jason', 'JPJ', 'Robert']
+
+    nums = [4,42,78,1,5]
+    nums.reverse()  # Reverse the order of the list items
+    print(nums)  # [5, 1, 78, 42, 4]
+
+    nums.sort(reverse=True)  # Sort the list in reverse order)
+    print(nums)  # [78, 42, 5, 4, 1]
+
+    print(sorted(nums, reverse=True))  # This returns the sorted list without modifying the original list order
+
+    # Timeline = (2:07:18)
     return
 
 
