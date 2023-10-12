@@ -262,6 +262,9 @@ def lesson5():  # User Input
 
 
 def lesson6():  # Lists & Tuples
+    ### Lists ###
+    # The data and order of the list can be changed (mutable)
+
     users = ['Dave', 'John', 'Sara']
     data = ['Dave', 42, True]
     emptylist = []
@@ -339,11 +342,189 @@ def lesson6():  # Lists & Tuples
     print(sorted(nums, reverse=True))  # This returns the sorted list without modifying the original list order
 
     # Timeline = (2:07:18)
+    # Other ways to copy a list
+    numscopy = nums.copy()
+    mynums = list(nums)
+    mycopy = nums[:]
+
+    print(numscopy)  # [78, 42, 5, 4, 1]
+    print(mynums)  # [78, 42, 5, 4, 1]
+    mycopy.sort()  # sorts list
+    print(mycopy)  # [1, 4, 5, 42, 78]
+    print(nums)  # [78, 42, 5, 4, 1]
+
+    print(type(nums))  # <class 'list'>
+
+    mylist = list([1, "Neil", True])  # create new list using constructor
+    print(mylist)  # [1, 'Neil', True]
+
+    ### Tuples ###
+    # Tuples are like lists except the data will not change (immutable)
+
+    mytuple = tuple(('Dave',42,True))  # create a tuple with a constructor
+    anothertuple = (1,4,2,8)
+
+    print(mytuple)  # ('Dave', 42, True) Has parenthesis instead of brackets
+    print(type(mytuple))  # <class 'tuple'>
+    print(type(anothertuple))  # <class 'tuple'>
+
+    newlist = list(mytuple)  # create a new list out of tuple
+    newlist.append('Neil')  # add a value to the list
+    newtuple = tuple(newlist)  # create a new tuple from new list
+    print(newtuple)  # ('Dave', 42, True, 'Neil')
+
+    (one, two, *hey) = anothertuple
+    print(one)  # 1 (unpacks the first value in anothertuple)
+    print(two)  # 4 (unpacks the second value in anothertuple)
+    print(hey)  # [2, 8] (unpacks the remaining values in anothertuple because of the asterisk)
+
+    (one, *two, hey) = anothertuple
+    print(one)  # 1 (unpacks the first value in anothertuple)
+    print(two)  # [4, 2] (unpacks the remaining values in anothertuple MINUS the last one (hey))
+    print(hey)  # 8 (unpacks the last value in anothertuple)
+
+    print(anothertuple.count(2))  # counts how many occurances of 2 in the tuple
+
     return
 
 
 def lesson7():  # Dictionaries & Sets
+    ### Dictionaries ###
+    # Used to store data values that are in key/value pairs
 
+    band = {  # dictionaries use curly braces
+        "vocals": "Plant",
+        "guitar": "Page"
+    }
+
+    band2 = dict(vocals="Plant", guitar="Page")  # Using the dictionary constructor
+
+    print(band)  # {'vocals': 'Plant', 'guitar': 'Page'}
+    print(band2)  # {'vocals': 'Plant', 'guitar': 'Page'}
+    print(type(band))  # <class 'dict'>
+    print(len(band))  # 2 (key pairs)
+
+    # Access items
+    print(band["vocals"])  # Plant
+    print(band.get("guitar"))  # Page
+
+    # List all keys
+    print(band.keys())  # dict_keys(['vocals', 'guitar'])
+
+    # List all values
+    print(band.values())  # dict_values(['Plant', 'Page'])
+
+    # List of key/value pairs as tuples
+    print(band.items())  # dict_items([('vocals', 'Plant'), ('guitar', 'Page')])
+
+    # Verify a key exists
+    print("guitar" in band)  # True
+    print("triangle" in band)  # False
+
+    # Change values
+    band["vocals"] = "Coverdale"  # changed vocals to Coverdale
+    band.update({"bass": "JPJ"})  # Added a new key/value pair
+
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'bass': 'JPJ'}
+
+    # Removing items
+    print(band.pop("bass"))  # returns JPJ (removes last key/value pair)
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page'}
+
+    band["drums"] = "Bonham"  # Add key/value pair
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'drums': 'Bonham'}
+
+    # removes last key/value pair added to the dictionary
+    print(band.popitem())  # returns tuple ('drums', 'Bonham')
+
+    # Delete and clear items
+    band["drums"] = "Bonham"  # Add key/value pair
+    del band["drums"]  # removes tuple ('drums', 'Bonham')
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page'}
+
+    band2.clear()  # clears all key/value pairs in dictionary
+    print(band2)  # {}
+
+    del band2  # completely deletes dictionary
+
+    # Copy dictionaries
+    # How not to copy dictionaries
+    band2 = band  # creates reference (which means they share memory. Modifying one modifies both.)
+    print("Bad copy!")
+    print(band2)  # {'vocals': 'Coverdale', 'guitar': 'Page'}
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page'}
+
+    band2["drums"] = "Dave"  # Adds key/value pair to both
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'drums': 'Dave'}
+
+    # How to copy dictionaries
+    band2 = band.copy()  # The proper way to make a dictionary copy
+    band2["drums"] = "Dave"  # Adds key/value pair to both
+    print("Good copy!")
+    print(band)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'drums': 'Dave'}
+    print(band2)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'drums': 'Dave'}
+
+    # Or use the dictionary constructor function
+    band3 = dict(band)  # Create copy using dict constructor function
+    print("Good copy!")
+    print(band3)  # {'vocals': 'Coverdale', 'guitar': 'Page', 'drums': 'Dave'}
+
+    # Nested dictionaries
+    # This means a key/value pair in a dictionary can be another dictionary
+
+    member1 = {
+        "name": "Plant",
+        "instrument": "vocals"
+    }
+    member2 = {
+        "name": "Page",
+        "instrument": "guitar"
+    }
+    band = {
+        "member1": member1,  # member1 dictionary as value
+        "member2": member2  # member2 dictionary as value
+    }
+    print(band)  # {'member1': {'name': 'Plant', 'instrument': 'vocals'}, 'member2': {'name': 'Page', 'instrument': 'guitar'}}
+    print(band["member1"]["name"])  # Plant (member1 is the first level deep. name is the second level deep.)
+
+    ### Sets ###
+
+    nums = { 1, 2, 3, 4 }  # create set
+
+    nums = set(( 1, 2, 3, 4 ))  # create set using set constructor function
+
+    nums2 = set ((1,2,3,4))  # create set using set constructor function
+
+    print(nums)  # {1, 2, 3, 4}
+    print(nums2)  # {1, 2, 3, 4}
+    print(type(nums))  # <class 'set'>
+    print(len(nums))  # 4
+
+    # No duplicates allowed
+    nums = { 1, 2, 2, 3}  # Tried to create set with a duplicate
+    print(nums)  # {1, 2, 3}
+
+    # True is a dupe of 1 and False is a Dupe of zero
+    nums = {1, True, 2, False, 3, 4, 0 }
+    print(nums)  # {False, 1, 2, 3, 4} (notice it is sorted)
+
+    # Check if a value is in a set
+    print(2 in nums)  # True
+
+    # but you cannot refer to an element in the set with an index position or a key
+    # Time stamp 2:40:54
+
+    # Add a new element to a set
+    nums.add(8)
+    print(nums)  # {False, 1, 2, 3, 4, 8}
+
+    # Add elements from one set to another
+    morenums = {5, 6, 7}
+    nums.update(morenums)  # Adding elements from morenums to nums
+    print(nums)  # {False, 1, 2, 3, 4, 5, 6, 7, 8}
+
+    # You can use update with lists, tuples, and dictionaries, too.
+    # 2:42:54
     return
 
 
@@ -359,4 +540,4 @@ def lesson():  #
 
 if __name__ == '__main__':
     # print('This script is not meant to be ran by itself. Please run main.py.')
-    lesson6()
+    lesson7()
