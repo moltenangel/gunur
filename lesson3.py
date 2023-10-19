@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 3 - Operators
+# Timestamp: 29:58
 
 def lesson3():
     # Symbols used to perform operations on values and the variables that hold those values.

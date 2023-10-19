@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 2 - The Basics
+# Timestamp: 14:51
 
 def lesson2():
     line01 = "********************"  # header/footer

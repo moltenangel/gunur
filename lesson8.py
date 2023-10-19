@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 8 - Loops
+# Timestamp: 2:46:23
 
 import sys
 import random
@@ -87,7 +88,7 @@ def lesson8():
 
 
 def lesson8b():  # Modify the code from lesson 5
-    # Rock Paper Scissors
+    # Rock Paper Scissors (Second Iteration)
     class RPS(Enum):
         ROCK = 1  # Constant variables use all caps
         PAPER = 2

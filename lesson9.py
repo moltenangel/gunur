@@ -1,7 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 9 - Functions
-
+# Timestamp: 3:09:04
 
 def lesson9():
     hello()

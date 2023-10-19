@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 11 - Scope
+# Timestamp: 3:41:11
 
 import sys
 import random
@@ -36,7 +37,7 @@ def lesson11():
 
 
 def play_rps():
-    # Rock Paper Scissors (Third iteration)
+    # Rock Paper Scissors (Forth iteration)
     class RPS(Enum):
         ROCK = 1  # Constant variables use all caps
         PAPER = 2

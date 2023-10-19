@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 6 - Lists & Tuples
+# Timestamp: 1:45:31
 
 def lesson6():
     # Lists #
