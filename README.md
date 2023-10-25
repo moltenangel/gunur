@@ -6,3 +6,10 @@ Right now, the menu items reflect lessons learned from a tutorial found on FreeC
 
 FreeCodeCamp's Ultimate Beginner's Python Course:
 https://www.freecodecamp.org/news/ultimate-beginners-python-course/
+
+Other References:
+Python Module Index:
+https://docs.python.org/py-modindex.html
+
+Python Standard Library Page:
+https://docs.python.org/3/library/index.html

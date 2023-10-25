@@ -52,6 +52,7 @@ def rps():
 
         nonlocal player_wins
         nonlocal python_wins
+
         class RPS(Enum):
             ROCK = 1  # Constant variables use all caps
             PAPER = 2
