@@ -9,6 +9,7 @@ import random as rdm
 import kansas
 from rps7 import rock_paper_scissors
 
+
 def lesson14():
     print(math.pi)
     print(pi)

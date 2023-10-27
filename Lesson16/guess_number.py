@@ -6,88 +6,72 @@
 
 import sys
 import random
-from enum import Enum
 
 
-def rps(name = 'PlayerOne'):  # PlayerOne is the default if no value is given.
+def guess_number(name='PlayerOne'):  # PlayerOne is the default if no value is given.
     game_count = 0
     player_wins = 0
-    python_wins = 0
 
-    def play_rps():
-        # Rock Paper Scissors (Eighth iteration)
+    def play_guess_number():
+        # Guess Number Game
         nonlocal name
         nonlocal player_wins
-        nonlocal python_wins
-
-        class RPS(Enum):
-            ROCK = 1  # Constant variables use all caps
-            PAPER = 2
-            SCISSORS = 3
 
         playerchoice = input(
-            f'\n{name}, please enter...\n1 for Rock,\n2 for Paper, or\n3 for Scissors:\n\n')
+            f"\n{name}, guess which number I'm thinking of...\n1, 2, or 3.\n\n")
+
         if playerchoice not in ["1", "2", "3"]:
             print(f"{name}, please enter 1, 2, or 3.")
-            return play_rps()
-
-        player = int(playerchoice)
+            return play_guess_number()
 
         computerchoice = random.choice("123")
 
+        print(f"{name}, you chose {playerchoice}.")
+        print(f"I was thinking about the number {computerchoice}.\n")
+
+        player = int(playerchoice)
+
         computer = int(computerchoice)
-
-        print(f"{name}, you chose {str(RPS(player)).replace('RPS.', '').title()}.")
-        print(f"Python chose {str(RPS(computer)).replace('RPS.', '').title()}.\n")
-
-        # Windows Key + "." = Emoji selection window
 
         def decide_winner(player, computer):
             nonlocal name
             nonlocal player_wins
-            nonlocal python_wins
-            if player == 1 and computer == 3:
+            if player == computer:
                 player_wins += 1
                 return f"🎉 {name}, you win!"
-            elif player == 2 and computer == 1:
-                player_wins += 1
-                return f"🎉 {name}, you win!"
-            elif player == 3 and computer == 2:
-                player_wins += 1
-                return f"🎉 {name}, you win!"
-            elif player == computer:
-                return "😲 Tie game!"
             else:
-                python_wins += 1
-                return f"🐍 Python wins!\nSorry, {name}..🥲"
+                return f"Sorry, {name}. Better luck next time. 🥲"
 
         game_result = decide_winner(player, computer)
 
         print(game_result)
 
-        nonlocal game_count  # Work with and modify the global variable
+        nonlocal game_count  # Work with and modify the "global"/nonlocal variable
         game_count += 1
 
         print(f"Game Count: {game_count}")
         print(f"{name}'s wins: {player_wins}")
-        print(f"Python wins: {python_wins}")
+        print(f"Your winning percentage: {player_wins / game_count:.2%}")
 
         print(f"\nPlay again, {name}?")
 
         while True:
-            question = input("\nY for Yes or \nQ to Quit\n")
-            if question.lower() not in ["y", "q"]:
+            playagain = input("\nY for Yes or \nQ to Quit\n")
+            if playagain.lower() not in ["y", "q"]:
                 continue  # Starts the loop again asking for "y" or "n"
             else:
                 break  # the loop stops
-        if question.lower() == "y":
-            play_rps()
+        if playagain.lower() == "y":
+            return play_guess_number()
         else:
             print("\n🎉🎉🎉🎉")
             print("Thank you for playing!\n")
-            sys.exit(f"Bye, {name}! 🙌")
+            if __name__ == '__main__':
+                sys.exit(f"Bye, {name}! 🙌")
+            else:
+                return
 
-    return play_rps
+    return play_guess_number
 
 
 if __name__ == '__main__':
@@ -104,5 +88,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    rock_paper_scissors = rps(args.name)
-    rock_paper_scissors()
+    guess_number_game = guess_number(args.name)
+    guess_number_game()

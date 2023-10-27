@@ -8,6 +8,7 @@ import random
 from enum import Enum
 
 # It is important not to use global variables when not needed
+# It is better to use Nonlocal variables inside nested functions
 game_count = 0
 count = 1
 

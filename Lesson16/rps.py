@@ -9,7 +9,7 @@ import random
 from enum import Enum
 
 
-def rps(name = 'PlayerOne'):  # PlayerOne is the default if no value is given.
+def rps(name='PlayerOne'):  # PlayerOne is the default if no value is given.
     game_count = 0
     player_wins = 0
     python_wins = 0
@@ -85,7 +85,10 @@ def rps(name = 'PlayerOne'):  # PlayerOne is the default if no value is given.
         else:
             print("\n🎉🎉🎉🎉")
             print("Thank you for playing!\n")
-            sys.exit(f"Bye, {name}! 🙌")
+            if __name__ == '__main__':
+                sys.exit(f"Bye, {name}! 🙌")
+            else:
+                return
 
     return play_rps
 

@@ -1,4 +1,4 @@
-# FreeCodeCamp's Ultimate Beginner's Python Course:
+# FreeCodeCamp's Ultimate Beginner's _Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 2 - The Basics
 # Timestamp: 14:51

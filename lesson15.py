@@ -12,6 +12,7 @@ def hello(name, lang):
     msg = f"{greetings[lang]} {name}!"
     print(msg)
 
+
 if __name__ == '__main__':
     # Reference: https://docs.python.org/py-modindex.html
     import argparse  # Command-line argument parsing library
