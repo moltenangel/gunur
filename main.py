@@ -1,15 +1,15 @@
 import fib
-import lesson1 as l1
-import lesson2 as l2
-import lesson3 as l3
-import lesson4 as l4
-import lesson5 as l5
-import lesson6 as l6
-import lesson7 as l7
-import lesson8 as l8
-import lesson9 as l9
-import lesson10 as l10
-import lesson11 as l11
+from Lesson1 import hello as l1
+from Lesson2 import welcome as l2
+from Lesson3 import meaning as l3
+from Lesson4 import data_types as l4
+from Lesson5 import rps as l5
+from Lesson6 import lists as l6
+from Lesson7 import dictionaries as l7
+from Lesson8 import loops as l8
+from Lesson9 import functions as l9
+from Lesson10 import recursion as l10
+from Lesson11 import scope as l11
 import lesson12 as l12
 import lesson13 as l13
 import lesson14 as l14

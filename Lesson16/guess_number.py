@@ -25,6 +25,7 @@ def guess_number(name='PlayerOne'):  # PlayerOne is the default if no value is g
             return play_guess_number()
 
         computerchoice = random.choice("123")
+        computerchoice = random.
 
         print(f"{name}, you chose {playerchoice}.")
         print(f"I was thinking about the number {computerchoice}.\n")

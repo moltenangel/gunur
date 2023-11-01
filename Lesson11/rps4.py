@@ -7,34 +7,8 @@ import sys
 import random
 from enum import Enum
 
-# It is important not to use global variables when not needed
-# It is better to use Nonlocal variables inside nested functions
+# This is a (module) global variable
 game_count = 0
-count = 1
-
-
-def lesson11():
-    # Global Scope
-    name = "Dave"
-
-
-    def another():
-        color = "blue"
-        global count  # Takes the value from the global variable (must be done before modifying)
-        count += 1
-        print(count)
-
-        def greeting(name):  # Functions have local scope
-            nonlocal color  # Uses color from the parent function
-            color = "red"
-            print(color)  # Has access to the Global Scope (until overwritten by local scope)
-            print(name)
-
-        greeting("Dave")
-
-    another()
-    play_rps()
-    return
 
 
 def play_rps():
@@ -98,4 +72,4 @@ def play_rps():
 
 
 if __name__ == '__main__':
-    lesson11()
+    play_rps()
