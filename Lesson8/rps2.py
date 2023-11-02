@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 8 - Loops
+# Rock Paper Scissors (Second Iteration)
 # Timestamp: 2:46:23
 
 import sys

@@ -13,3 +13,7 @@ https://docs.python.org/py-modindex.html
 
 Python Standard Library Page:
 https://docs.python.org/3/library/index.html
+
+w3 Schools Python String format() method
+https://w3schools.com/python/ref_string_format.asp
+

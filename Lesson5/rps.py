@@ -1,6 +1,7 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 5 - User Input
+# Rock Paper Scissors (First Iteration)
 # Timestamp: 1:23:25
 
 import sys

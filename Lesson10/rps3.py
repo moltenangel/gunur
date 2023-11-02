@@ -1,8 +1,9 @@
 # FreeCodeCamp's Ultimate Beginner's Python Course:
 # https://www.freecodecamp.org/news/ultimate-beginners-python-course/
 # Lesson 10 - Recursion
+# Rock Paper Scissors (Thirdth Iteration)
 # Timestamp: 3:23:48
-# Recursion is when a function calls itself
+
 
 import sys
 import random
