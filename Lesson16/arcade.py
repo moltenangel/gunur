@@ -28,11 +28,9 @@ def play_game(name='PlayerOne'):  # PlayerOne is the default if no value is give
         welcome_back = True
 
         if playerchoice == "1":
-            print("rps")
             rock_paper_scissors = rps(name)
             rock_paper_scissors()
         if playerchoice == "2":
-            print("guess_number")
             guess_my_number = guess_number(name)
             guess_my_number()
         if playerchoice.lower() == "x":

@@ -1,7 +1,11 @@
+# gunur - Discovering Purpose
+# FreeCodeCamp's Ultimate Beginner's Python Course:
+# https://www.freecodecamp.org/news/ultimate-beginners-python-course/
+
 import fib
 from Lesson13 import f_strings as l13
 from Lesson14 import modules as l14
-import lesson15 as l15
+from Lesson15 import hello_person as l15
 import lesson16 as l16
 
 

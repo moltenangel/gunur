@@ -26,5 +26,6 @@ def randomfunfact():
 
     print(funfacts[int(index)])
 
+
 if __name__ == '__main__':
     randomfunfact()
