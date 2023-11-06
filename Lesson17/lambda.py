@@ -6,22 +6,29 @@
 # Lambda functions are sometimes referred to as anonymous functions
 
 
+from functools import reduce
+
+
 squared = lambda num : num * num  # (This is the way he wrote it. VSCode converted it to the way it is written below)
 # def squared(num): return num * num
 
 
-print(squared(2))
+print(squared(2))  # 4
 
 addTwo = lambda num : num + 2
 
-print(addTwo(12))
+print(addTwo(12))  # 14
 
-sum = lambda a, b : a + b
+# sum_total = lambda a, b : a + b
 
-print(sum(10,8))
+
+def sum_total(a, b): return a + b
+
+
+print(sum_total(10,8))  # 18
 
 ########################
-# When would I use a lamba?
+# When would I use a lambda?
 # Lambdas are usually used inside another function
 
 
@@ -46,15 +53,36 @@ numbers = [3,7,12,18,20,21]
 squared_nums = map(lambda num : num * num, numbers)
 # map() is a built-in function that receives a function as the first argument
 
-print(list(squared_nums))
+print(list(squared_nums))  # [9, 49, 144, 324, 400, 441]
 
 ########################
 # Filters filter results
-# This function will filter the results of list... (all in one line of code)
+# This function will filter the results of a list... (all in one line of code)
 odd_nums = filter(lambda num : num % 2 != 0, numbers)
 # filter() is a built-in function
 # != is a comparison which will return True or False
 
-print(list(odd_nums))
+print(list(odd_nums))  # [3, 7, 21]
 
-# 5:49:46
+########################
+
+# acc = accumulator (or subtotal)
+# curr = current (current item)
+lambda acc, cur: acc + curr
+
+numbers = [1,2,3,4,5,1]
+
+total = reduce(lambda acc, curr: acc + curr, numbers, 10)
+
+print(total)  # 16
+
+print(sum(numbers, 10))
+
+
+lambda acc, curr : acc + len(curr)
+
+names = ['Dave Gray','Sara Ito','John Jacob Jingleheimerschmidt']
+
+char_count = reduce(lambda acc, curr : acc + len(curr), names, 0)
+
+print(char_count)  # 47
